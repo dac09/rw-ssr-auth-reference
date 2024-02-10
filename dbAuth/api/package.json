@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@redwoodjs/api": "7.0.0-canary.959",
+    "@redwoodjs/auth-dbauth-api": "7.0.0-canary.959",
+    "@redwoodjs/graphql-server": "7.0.0-canary.959"
+  }
+}

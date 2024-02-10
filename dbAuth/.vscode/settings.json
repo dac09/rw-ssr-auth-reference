@@ -1,0 +1,31 @@
+{
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#df4e69",
+    "activityBar.background": "#df4e69",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#48d827",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#df4e69",
+    "statusBar.background": "#d42647",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#df4e69",
+    "statusBarItem.remoteBackground": "#d42647",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#d42647",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#d4264799",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#d42647"
+}
