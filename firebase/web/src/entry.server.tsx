@@ -84,7 +84,7 @@ export const middleware = async (req: MiddlewareRequest) => {
       isAuthenticated: !!currentUser,
       hasError: false,
       userMetadata: null,
-      encryptedSession: sessionCookie.value,
+      cookieHeader: sessionCookie.value,
     },)
   } catch (e) {
     console.error('Error verifying cookie >> \n', e)

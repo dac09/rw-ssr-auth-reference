@@ -38,6 +38,74 @@ We also reuse the same admin app between the web and api sides
 1. Remember to unpause whatever project you are using on supabase!!
 2. We go through a lot of hooops to pull out the token just to pass to the authDecoder. I wonder if there's a better way here.
 3. Notice where `createBrowserClient` is imported from in `supabase/web/src/auth.ts` This is so that supabase itself sets the cookie for us. The new `@supabase/ssr` package is the key!
+4. When you login with supabase, it doesn't automatically redirect away from the login page. I'm not sure why this is happening
+5. The auth-provider cookie set in the WEB auth client. i.e. client side. I'm not 100% sure this is the best solution, we could implement the token swap mechanism we have in firebase too.
+6. The shape of the decoded token returned from supabase is not exactly the same.
+
+<details>
+<summary>See the two types of decoded responses 👇</summary>
+Old decoded token for example:
+```
+{
+  "aud": "authenticated",
+  "exp": 1708340101,
+  "iat": 1707735301,
+  "iss": "https://pmavftcsgoonzlgqkken.supabase.co/auth/v1",
+  "sub": "cf071c32-20db-4f23-be69-c8b8420063a0",
+  "email": "dannychoudhury@gmail.com",
+  "phone": "",
+  "app_metadata": {
+    "provider": "email",
+    "providers": [
+      "email"
+    ]
+  },
+  "user_metadata": {},
+  "role": "authenticated",
+  "aal": "aal1",
+  "amr": [
+    {
+      "method": "otp",
+      "timestamp": 1707555518
+    }
+  ],
+  "session_id": "8f026cf0-b346-467c-9e0b-75716b4fdaff"
+}
+```
+New:
+```
+{
+   id: '75fd8091-e0a7-4e7d-8a8d-138d0eb3ca5a',
+   aud: 'authenticated',
+   role: 'authenticated',
+   email: 'dannychoudhury+1@gmail.com',
+   email_confirmed_at: '2023-11-15T08:13:43.982687Z',
+   phone: '',
+   confirmation_sent_at: '2023-11-15T08:13:24.695281Z',
+   confirmed_at: '2023-11-15T08:13:43.982687Z',
+   last_sign_in_at: '2024-02-12T10:41:56.353527Z',
+   app_metadata: { provider: 'email', providers: [ 'email' ] },
+   user_metadata: { 'full-name': 'Danny Choudhury 1' },
+   identities: [
+     {
+       identity_id: 'c59f188e-5c92-40b1-b7e3-26ba31222cee',
+       id: '75fd8091-e0a7-4e7d-8a8d-138d0eb3ca5a',
+       user_id: '75fd8091-e0a7-4e7d-8a8d-138d0eb3ca5a',
+       identity_data: [Object],
+       provider: 'email',
+       last_sign_in_at: '2023-11-15T08:13:24.691649Z',
+       created_at: '2023-11-15T08:13:24.691692Z',
+       updated_at: '2023-11-15T08:13:24.691692Z',
+       email: 'dannychoudhury+1@gmail.com'
+     }
+   ],
+   created_at: '2023-11-15T08:13:24.686262Z',
+   updated_at: '2024-02-12T10:41:56.355166Z'
+ }
+```
+</details>
+
+
 
 ### DbAuth
 1. Notice how we had to create a "shared" handler in `dbAuth/web/src/authHandler.ts`. This is so that we share the same options as the auth function for dbAuth. I haven't tried removing this handler just yet - but don't think its necessary because middleware should be able to handle everything.
