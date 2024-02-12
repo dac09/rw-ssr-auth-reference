@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "baseUrl": "./",
     "skipLibCheck": false,
     "rootDirs": [
