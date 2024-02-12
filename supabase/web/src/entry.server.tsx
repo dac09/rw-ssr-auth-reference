@@ -34,11 +34,7 @@ export const middleware = async (req: MiddlewareRequest) => {
       event: {} as any,
       context: {} as any,
     })
-  } catch (e) {
-    // @TODO, @MARK Unsure what to do if authDecoding fails.
-    // unlike firebase, and dbauth - where we unset the cookie, supabase itself sets these cookies
-    console.error('Failed to decode session in middleware')
-  }
+
 
 
   // @MARK @WARN getCurrentUser in template destructures event and context
@@ -58,6 +54,11 @@ export const middleware = async (req: MiddlewareRequest) => {
   })
 
   return mwRes
+  } catch (e) {
+    // @TODO, @MARK Unsure what to do if authDecoding fails.
+    // unlike firebase, and dbauth - where we unset the cookie, supabase itself sets these cookies
+    console.error('Failed to decode session in middleware')
+  }
 }
 
 export const ServerEntry: React.FC<Props> = ({ css, meta }) => {
