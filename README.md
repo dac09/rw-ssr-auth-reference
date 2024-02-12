@@ -110,5 +110,6 @@ New:
 ### DbAuth
 1. Notice how we had to create a "shared" handler in `dbAuth/web/src/authHandler.ts`. This is so that we share the same options as the auth function for dbAuth. I haven't tried removing this handler just yet - but don't think its necessary because middleware should be able to handle everything.
 2. In [web/src/auth.ts](dbAuth/web/src/auth.ts) for dbAuth - I'm overriding the auth URL - so it hits middleware instead of the api side dbAuth function
+3. dbAuth and firebase both use the cookie "session" to store sessions. So if you logged in firebase, dbAuth could error out. This is because the dbAuth middleware doesn't log you out automatically on exceptions (but firebase does). Just something I haven't gotten round to.
 
 
