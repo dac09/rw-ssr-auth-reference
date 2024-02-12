@@ -45,7 +45,7 @@ We also reuse the same admin app between the web and api sides
 <details>
 <summary>See the two types of decoded responses 👇</summary>
 Old decoded token for example:
-```
+<code>
 {
   "aud": "authenticated",
   "exp": 1708340101,
@@ -71,9 +71,9 @@ Old decoded token for example:
   ],
   "session_id": "8f026cf0-b346-467c-9e0b-75716b4fdaff"
 }
-```
+</code>
 New:
-```
+<code>
 {
    id: '75fd8091-e0a7-4e7d-8a8d-138d0eb3ca5a',
    aud: 'authenticated',
@@ -102,12 +102,13 @@ New:
    created_at: '2023-11-15T08:13:24.686262Z',
    updated_at: '2024-02-12T10:41:56.355166Z'
  }
-```
+</code>
 </details>
 
 
 
 ### DbAuth
 1. Notice how we had to create a "shared" handler in `dbAuth/web/src/authHandler.ts`. This is so that we share the same options as the auth function for dbAuth. I haven't tried removing this handler just yet - but don't think its necessary because middleware should be able to handle everything.
+2. In [web/src/auth.ts](dbAuth/web/src/auth.ts) for dbAuth - I'm overriding the auth URL - so it hits middleware instead of the api side dbAuth function
 
 
