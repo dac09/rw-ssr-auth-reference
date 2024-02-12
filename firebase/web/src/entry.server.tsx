@@ -58,10 +58,10 @@ export const middleware = async (req: MiddlewareRequest) => {
 
 
 
-  const sessionCookie = req.cookies.get('session')
+  const cookieHeader = req.headers.get('cookie')
 
   // PART 2: no auth
-  if (!sessionCookie) {
+  if (!cookieHeader) {
     // If there's no cookie header, there's no session
     return
   }
@@ -70,11 +70,11 @@ export const middleware = async (req: MiddlewareRequest) => {
   // PART 3: validate cookie & setting auth context,
   try {
     // @MARK: Pass ALL the cookies in, to maintain compatibility with supabase for example
-    const decodedToken = await authDecoder(req.headers.get('cookie'), 'firebase', {} as any)
+    const decodedToken = await authDecoder(cookieHeader, 'firebase', {} as any)
 
     // @MARK: Note the second and third params
     // We need to decide what the new shape of getCurrentUser will be
-    const currentUser = await getCurrentUser(decodedToken, { token: sessionCookie.value, type: 'firebase' }, {} as any)
+    const currentUser = await getCurrentUser(decodedToken, { token: cookieHeader, type: 'firebase' }, {} as any)
 
 
 
@@ -84,8 +84,10 @@ export const middleware = async (req: MiddlewareRequest) => {
       isAuthenticated: !!currentUser,
       hasError: false,
       userMetadata: null,
-      cookieHeader: sessionCookie.value,
+      cookieHeader,
     },)
+
+    console.log('sssssss auth state', req.serverAuthContext.get())
   } catch (e) {
     console.error('Error verifying cookie >> \n', e)
 
@@ -96,6 +98,8 @@ export const middleware = async (req: MiddlewareRequest) => {
 
     return createLogoutResponse(req)
   }
+  console.log(`👉 \n ~ req.serverAuthContext.get():`, req.serverAuthContext.get())
+  console.log(`👉 \n ~  req.serverAuthContext.get():`, req.serverAuthContext.get())
 
 
   return mwRes
