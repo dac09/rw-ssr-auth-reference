@@ -5,6 +5,10 @@ This is not a monorepo really, they are just individual projects in the `supabas
 
 In each case you have:
 - Auth middleware implemented in `web/src/entry.server.tsx`. This is where you should be looking!
+	1. [Firebase](firebase/web/src/entry.server.tsx)
+	1. [Supabase](supabase/web/src/entry.server.tsx)
+	1. [dbAuth](dbAuth/web/src/entry.server.tsx)
+
 - Expects the projects are running against the branch here: https://github.com/redwoodjs/redwood/pull/9962 - I usually do a `yarn rwfw project:sync`
 - Demonstrates how we can use cookies to do auth on the server for streaming and RSC
 
