@@ -261,31 +261,5 @@
     "whatwg-fetch": "3.6.19",
     "yargs": "17.7.2",
     "yargs-parser": "21.1.1"
-  },
-  "scripts": {
-    "redwood": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/redwood.js",
-    "rw": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/redwood.js",
-    "rwfw": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/rwfw.js",
-    "tsc": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/tsc.js",
-    "rw-api-server-watch": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/rw-api-server-watch.js",
-    "rw-log-formatter": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/rw-log-formatter.js",
-    "rw-server": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/api-server/dist/bin.js",
-    "up": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/cli-data-migrate/dist/bin.js",
-    "cross-env": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/cross-env.js",
-    "eslint": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/eslint.js",
-    "jest": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/jest.js",
-    "nodemon": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/nodemon.js",
-    "rw-dev-fe": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/vite/dist/devFeServer.js",
-    "rw-gen": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/internal/dist/generate/generate.js",
-    "rw-gen-watch": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/internal/dist/generate/watch.js",
-    "rw-serve-api": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/core/dist/bins/rw-serve-api.js",
-    "rw-serve-fe": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/vite/dist/runFeServer.js",
-    "rw-web-server": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web-server/dist/bin.js",
-    "rw-vite-build": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/vite/bins/rw-vite-build.mjs",
-    "rw-vite-dev": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/vite/bins/rw-vite-dev.mjs",
-    "vite": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/vite/bins/vite.mjs",
-    "msw": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/msw.js",
-    "storybook": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/storybook.js",
-    "webpack": "node /Users/dac09/Experiments/rw-apollo-ssr-stream/node_modules/@redwoodjs/web/dist/bins/webpack.js"
   }
 }
